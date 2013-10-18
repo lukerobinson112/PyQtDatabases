@@ -45,6 +45,11 @@ class ShopWindow(QMainWindow):
         self.order_menu.addAction(self.browse_orders)
         self.product_menu.addAction(self.add_product)
         self.product_menu.addAction(self.browse_products)
+        self.menu_bar.addMenu(self.database_menu)
+        self.menu_bar.addMenu(self.customer_menu)
+        self.menu_bar.addMenu(self.order_menu)
+        self.menu_bar.addMenu(self.product_menu)
+        self.setMenuBar(self.menu_bar)
 
         #create toolbars
         self.database_toolbar = QToolBar("Manage Databases")
