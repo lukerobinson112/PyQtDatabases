@@ -20,8 +20,15 @@ class ShopWindow(QMainWindow):
         self.browse_orders = QAction("Browse Orders",self)
         self.add_product = QAction("Add Product",self)
         self.browse_products = QAction("Browse Products",self)
-        self.open_shortcut = QKeySequence(Qt.CTRL + Qt.Key_O)
-        self.open_database.setShortcut(self.open_shortcut)
+        #keyboard shortcuts
+        self.open_database.setShortcut(QKeySequence(Qt.CTRL + Qt.Key_O))
+        self.close_database.setShortcut(QKeySequence(Qt.CTRL + Qt.Key_Q))
+        self.add_customer.setShortcut(QKeySequence(Qt.CTRL + Qt.Key_A))
+        self.browse_customers.setShortcut(QKeySequence(Qt.CTRL + Qt.Key_B))
+        self.add_order.setShortcut(QKeySequence(Qt.CTRL + Qt.Key_Y))
+        self.browse_orders.setShortcut(QKeySequence(Qt.CTRL + Qt.Key_U))
+        self.add_product.setShortcut(QKeySequence(Qt.CTRL + Qt.Key_F))
+        self.browse_products.setShortcut(QKeySequence(Qt.CTRL + Qt.Key_G))
 
         #create the menubar
         self.menu_bar = QMenuBar()
@@ -53,6 +60,7 @@ class ShopWindow(QMainWindow):
         self.order_toolbar.addAction(self.browse_orders)
         self.product_toolbar.addAction(self.add_product)
         self.product_toolbar.addAction(self.browse_products)
+        
 
         #add toolbars to window
         self.addToolBar(self.database_toolbar)
